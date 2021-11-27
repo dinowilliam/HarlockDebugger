@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "HD": {
+      "commandName": "Project",
+      "commandLineArgs": "..\\..\\..\\Examples\\PurchaseOrders.xml PurchaseOrders"
+    }
+  }
+}

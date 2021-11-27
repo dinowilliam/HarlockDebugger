@@ -1,35 +1,27 @@
-﻿using System;
+﻿using HD.Commands;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Xml.Linq;
 
 namespace HD
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            string xml = @"<Students>
-                <Student ID=""100"">
-                    <Name>Arul</Name>
-                    <Mark>90</Mark>
-                </Student>
-                <Student>
-                    <Name>Arul2</Name>
-                    <Mark>80</Mark>
-                </Student>
-            </Students>";
+    class Program {
 
-            dynamic students = DynamicXml.Parse(xml);            
+        static void Main(string[] args) {
 
-            var id = students.Student[0].ID;
-            var name1 = students.Student[1].Name;
+            if (args.Length > 1){                
 
-            foreach (var std in students.Student)
-            {
-                //Console.WriteLine(std.ID);
-                Console.WriteLine(std.Name);
-                Console.WriteLine(std.Mark);
+                FileStream fs = new FileStream(args[0], FileMode.Open, FileAccess.Read);
+                
+                var xmlComand = new XMLCommand(args[1], fs);
+                Console.WriteLine(xmlComand.Execute());
+
+                Console.ReadLine();
+        
             }
         }
+
     }
 }

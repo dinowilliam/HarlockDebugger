@@ -23,6 +23,11 @@ namespace HD
             return new DynamicXml(RemoveNamespaces(XDocument.Parse(xmlString).Root));
         }
 
+        public static DynamicXml Parse(XDocument xmlDocument)
+        {
+            return new DynamicXml(RemoveNamespaces(xmlDocument.Root));
+        }
+
         public static DynamicXml Load(string filename)
         {
             return new DynamicXml(RemoveNamespaces(XDocument.Load(filename).Root));
