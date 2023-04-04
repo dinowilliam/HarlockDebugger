@@ -2,7 +2,7 @@
   "profiles": {
     "HD": {
       "commandName": "Project",
-      "commandLineArgs": "..\\..\\..\\Examples\\PurchaseOrders.xml PurchaseOrders"
+      "commandLineArgs": "..\\..\\..\\Examples\\PurchaseOrders.xml 99505"
     }
   }
 }

@@ -22,11 +22,9 @@ namespace HD.Commands {
             var stringReturn = new StringBuilder();
 
             var xmlDocument = XDocument.Load(_fileStream);
-
-            // var Items = xmlDocument.Root.(_property);
-
-            var Items = from el in xmlDocument.Descendants()
-            where (string) el.Attribute("Text") == _property
+            
+            var Items = from el in xmlDocument.Elements()
+            where (string) el.Attribute("PurchaseOrderNumber") == _property
             select el;
 
             foreach (var item in Items) {

@@ -1,12 +1,10 @@
-﻿using HD.Commands;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.IO;
-using System.Linq;
-using System.Xml.Linq;
 
-namespace HD
-{
+namespace HD {
+
+    using HD.Commands;
+
     class Program {
 
         static void Main(string[] args) {
